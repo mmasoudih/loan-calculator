@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,69 @@
     <link rel="stylesheet" href="assets/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
-    
-    
+    <div class="alert-float">
+        تمامی مقادیر را وارد کنید
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s10 offset-s1">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                            <h1 class="card-title center">ماشین حساب وام</h1>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input type="number" id="loan">
+                                <label for="loan">مبلغ وام به تومان:</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" id="percent">
+                                <label for="percent">سود وام به ٪ (درصد)</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" id="year">
+                                <label for="year">دوره بازپرداخت وام</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <div class="center-align">
+                            <button class="waves-effect waves-light btn-large light-blue " type="submit">محاسبه کن
+                                <i class="material-icons left">iso</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 offset-s1 resultBox">
+                <div class="card">
+                    <div class="card-content center-align">
+                        <i class="material-icons large loading">sync</i>
+                            <div class="result">
+                                <div class="input-field">
+                                    <input type="text" id="profitInMonth" class="valid" disabled value="0">
+                                    <label for="profitInMonth">سود ماهیانه</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="allProfit" class="valid" disabled value="0">
+                                    <label for="allProfit">سود کل وام</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="totalPay" class="valid" disabled value="0">
+                                    <label for="totalPay">مجموع پرداختی</label>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/materialize.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
