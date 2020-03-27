@@ -19,7 +19,7 @@ function loadAllEvents() {
     calculateBtn.addEventListener('click', () => {
         loadingBox.style.display = 'flex';
         resultBox.style.display = 'block';
-        setTimeout(calculateLoan, 2000);
+        setTimeout(calculateLoan, 1200);
     });
 }
 
@@ -50,7 +50,7 @@ function showError() {
     loanAmount.classList.add('invalid');
     loanProfit.classList.add('invalid');
     loanYear.classList.add('invalid');
-    setTimeout(clearError, 2000);
+    setTimeout(clearError, 1200);
 
 }
 
