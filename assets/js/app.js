@@ -10,15 +10,15 @@ let alertBox = document.querySelector('.alert-float');
 let spinner = document.querySelector('.loading');
 let resultBox = document.querySelector('.resultBox');
 let result = document.querySelector('.result');
-
+let loadingBox = document.querySelector('.loadingBox');
 
 //invoke all events
 loadAllEvents();
 
 function loadAllEvents() {
     calculateBtn.addEventListener('click', () => {
+        loadingBox.style.display = 'flex';
         resultBox.style.display = 'block';
-        spinner.style.display = 'inline-block';
         setTimeout(calculateLoan, 2000);
     });
 }
@@ -27,18 +27,16 @@ function calculateLoan() {
     let intAmount = parseFloat(loanAmount.value);
     let intPercent = parseFloat(loanProfit.value);
     let intMonth = parseFloat(loanYear.value) * 12;
-
     let calPercent = (intAmount * intPercent * (intMonth + 1)) / 2400;
     let calMontlyPayment = (calPercent + intAmount) / intMonth;
     let calTotalPayment = calPercent + intAmount;
-
     if (!isNaN(intAmount) && !isNaN(intPercent) && !isNaN(intMonth)) {
         loanAllProfit.value = Math.round(calPercent).toString() + " هزار تومان";
         loanMontlyProfit.value = Math.round(calMontlyPayment).toString() + " هزار تومان";
         loanProfitAndAmount.value = Math.round(calTotalPayment).toString() + " هزار تومان";
         resultBox.style.display = 'block';
         result.style.display = 'block';
-        spinner.style.display = 'none';
+        loadingBox.style.display = 'none';
     } else {
         showError();
     }
@@ -47,6 +45,7 @@ function calculateLoan() {
 
 function showError() {
     resultBox.style.display = 'none';
+    loadingBox.style.display = 'none';
     alertBox.classList.add('show');
     loanAmount.classList.add('invalid');
     loanProfit.classList.add('invalid');

@@ -5,6 +5,11 @@
   box-sizing: border-box;
   direction: rtl;
 }
+body {
+  background: #00c6ff;
+  background: -webkit-linear-gradient(to right, #8b59ff, #bea2ff);
+  background: linear-gradient(to right, #8b59ff, #bea2ff);
+}
 span,
 button,
 label,
@@ -64,9 +69,21 @@ input {
   animation: animate 1s;
 }
 .loading {
-  display: none;
-  color: #000000;
+  display: inline-block;
+  color: #ffffff;
   animation: rotate 0.6s infinite;
+}
+.loadingBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #00c6ff;
+  background: -webkit-linear-gradient(to right, #2a2affff, #2a7fffff);
+  background: linear-gradient(to right, #2a2affff, #2a7fffff);
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 .result {
   display: none;
@@ -76,7 +93,6 @@ input {
 }
 @keyframes rotate {
   100% {
-    color: #5a5a5a;
     transform: rotate(360deg);
   }
 }
